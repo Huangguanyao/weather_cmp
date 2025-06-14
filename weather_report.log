@@ -1,0 +1,369 @@
+2025-06-11 11:58:54,040 - INFO - Processing request of type ListToolsRequest
+2025-06-11 11:58:54,040 - INFO - Processing request of type ListResourcesRequest
+2025-06-11 11:58:54,040 - INFO - Processing request of type ListResourceTemplatesRequest
+2025-06-11 11:58:54,715 - INFO - Processing request of type ListToolsRequest
+2025-06-11 11:58:54,719 - INFO - Processing request of type ListResourcesRequest
+2025-06-11 11:58:54,733 - INFO - Processing request of type ListResourceTemplatesRequest
+2025-06-11 12:01:02,233 - INFO - Processing request of type ListToolsRequest
+2025-06-11 12:01:02,233 - INFO - Processing request of type ListResourcesRequest
+2025-06-11 12:01:02,233 - INFO - Processing request of type ListResourceTemplatesRequest
+2025-06-11 12:04:53,878 - INFO - Processing request of type ListToolsRequest
+2025-06-11 12:04:53,878 - INFO - Processing request of type ListResourcesRequest
+2025-06-11 12:04:53,878 - INFO - Processing request of type ListResourceTemplatesRequest
+2025-06-11 12:06:15,488 - INFO - Processing request of type ListToolsRequest
+2025-06-11 12:06:15,492 - INFO - Processing request of type ListResourcesRequest
+2025-06-11 12:06:15,492 - INFO - Processing request of type ListResourceTemplatesRequest
+2025-06-11 12:06:57,519 - INFO - Processing request of type ListToolsRequest
+2025-06-11 12:06:57,519 - INFO - Processing request of type ListResourcesRequest
+2025-06-11 12:06:57,528 - INFO - Processing request of type ListResourceTemplatesRequest
+2025-06-11 12:07:05,196 - INFO - Processing request of type ListToolsRequest
+2025-06-11 12:07:05,200 - INFO - Processing request of type ListResourcesRequest
+2025-06-11 12:07:05,202 - INFO - Processing request of type ListResourceTemplatesRequest
+2025-06-11 12:07:15,430 - INFO - Processing request of type ListToolsRequest
+2025-06-11 12:07:15,430 - INFO - Processing request of type ListResourcesRequest
+2025-06-11 12:07:15,430 - INFO - Processing request of type ListResourceTemplatesRequest
+2025-06-11 12:10:24,379 - INFO - Processing request of type CallToolRequest
+2025-06-11 12:10:24,379 - INFO - 开始生成 北京 的天气快报
+2025-06-11 12:10:32,216 - ERROR - 保存降水分布图失败: Failed to convert value(s) to axis units: '116.41876'
+2025-06-11 12:10:32,233 - ERROR - 生成天气快报失败: 生成图表时出错: Failed to convert value(s) to axis units: '116.41876'
+2025-06-11 12:10:32,412 - ERROR - Traceback (most recent call last):
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\axis.py", line 1811, in convert_units
+    ret = self._converter.convert(x, self.units, self)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\category.py", line 49, in convert
+    raise ValueError(
+ValueError: Missing category information for StrCategoryConverter; this might be caused by unintendedly mixing categorical and numeric data
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\86157\weather_cmp\MCPserver\china_weather_forecast2025022.py", line 199, in save_plot
+    adjust_text(texts)
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\adjustText\__init__.py", line 596, in adjust_text
+    force_draw(ax)
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\adjustText\__init__.py", line 419, in force_draw
+    ax.figure.draw_without_rendering()
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\figure.py", line 3273, in draw_without_rendering
+    self.draw(renderer)
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\artist.py", line 94, in draw_wrapper
+    result = draw(artist, renderer, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\artist.py", line 71, in draw_wrapper
+    return draw(artist, renderer)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\figure.py", line 3257, in draw
+    mimage._draw_list_compositing_images(
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\image.py", line 134, in _draw_list_compositing_images
+    a.draw(renderer)
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\artist.py", line 71, in draw_wrapper
+    return draw(artist, renderer)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\axes\_base.py", line 3216, in draw
+    mimage._draw_list_compositing_images(
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\image.py", line 134, in _draw_list_compositing_images
+    a.draw(renderer)
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\artist.py", line 71, in draw_wrapper
+    return draw(artist, renderer)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\text.py", line 762, in draw
+    posx = float(self.convert_xunits(x))
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\artist.py", line 278, in convert_xunits
+    return ax.xaxis.convert_units(x)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\axis.py", line 1813, in convert_units
+    raise munits.ConversionError('Failed to convert value(s) to axis '
+matplotlib.units.ConversionError: Failed to convert value(s) to axis units: '116.41876'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\86157\weather_cmp\MCPserver\china_weather_forecast2025022.py", line 317, in fastreport_in_word
+    pic_path = save_plot(areas, location)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\MCPserver\china_weather_forecast2025022.py", line 214, in save_plot
+    raise ValueError(f"生成图表时出错: {str(e)}")
+ValueError: 生成图表时出错: Failed to convert value(s) to axis units: '116.41876'
+
+2025-06-11 12:11:18,781 - INFO - Processing request of type ListToolsRequest
+2025-06-11 12:11:18,785 - INFO - Processing request of type ListResourcesRequest
+2025-06-11 12:11:18,789 - INFO - Processing request of type ListResourceTemplatesRequest
+2025-06-11 12:13:14,729 - INFO - Processing request of type ListToolsRequest
+2025-06-11 12:13:14,729 - INFO - Processing request of type ListResourcesRequest
+2025-06-11 12:13:14,729 - INFO - Processing request of type ListResourceTemplatesRequest
+2025-06-11 12:13:22,678 - INFO - Processing request of type ListToolsRequest
+2025-06-11 12:13:22,679 - INFO - Processing request of type ListResourcesRequest
+2025-06-11 12:13:22,679 - INFO - Processing request of type ListResourceTemplatesRequest
+2025-06-11 12:16:01,579 - INFO - Processing request of type CallToolRequest
+2025-06-11 12:16:01,580 - INFO - 开始生成 北京 的天气快报
+2025-06-11 12:16:01,729 - ERROR - 获取降水数据失败: 无效的时间参数: 5h
+2025-06-11 12:16:01,729 - ERROR - 生成天气快报失败: 处理降水数据时出错: 无效的时间参数: 5h
+2025-06-11 12:16:01,729 - ERROR - Traceback (most recent call last):
+  File "C:\Users\86157\weather_cmp\MCPserver\china_weather_forecast2025022.py", line 148, in get_precip
+    raise ValueError(f"无效的时间参数: {time}")
+ValueError: 无效的时间参数: 5h
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\86157\weather_cmp\MCPserver\china_weather_forecast2025022.py", line 280, in fastreport_in_word
+    precip_min, precip_max, precip_mean = get_precip(location_id, time, interval)
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\MCPserver\china_weather_forecast2025022.py", line 176, in get_precip
+    raise ValueError(f"处理降水数据时出错: {str(e)}")
+ValueError: 处理降水数据时出错: 无效的时间参数: 5h
+
+2025-06-11 12:17:01,119 - INFO - Processing request of type CallToolRequest
+2025-06-11 12:17:01,119 - INFO - 开始生成 北京 的天气快报
+2025-06-11 12:17:06,219 - ERROR - 保存降水分布图失败: Failed to convert value(s) to axis units: '116.41876'
+2025-06-11 12:17:06,232 - ERROR - 生成天气快报失败: 生成图表时出错: Failed to convert value(s) to axis units: '116.41876'
+2025-06-11 12:17:06,239 - ERROR - Traceback (most recent call last):
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\axis.py", line 1811, in convert_units
+    ret = self._converter.convert(x, self.units, self)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\category.py", line 49, in convert
+    raise ValueError(
+ValueError: Missing category information for StrCategoryConverter; this might be caused by unintendedly mixing categorical and numeric data
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\86157\weather_cmp\MCPserver\china_weather_forecast2025022.py", line 199, in save_plot
+    adjust_text(texts)
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\adjustText\__init__.py", line 596, in adjust_text
+    force_draw(ax)
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\adjustText\__init__.py", line 419, in force_draw
+    ax.figure.draw_without_rendering()
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\figure.py", line 3273, in draw_without_rendering
+    self.draw(renderer)
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\artist.py", line 94, in draw_wrapper
+    result = draw(artist, renderer, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\artist.py", line 71, in draw_wrapper
+    return draw(artist, renderer)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\figure.py", line 3257, in draw
+    mimage._draw_list_compositing_images(
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\image.py", line 134, in _draw_list_compositing_images
+    a.draw(renderer)
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\artist.py", line 71, in draw_wrapper
+    return draw(artist, renderer)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\axes\_base.py", line 3216, in draw
+    mimage._draw_list_compositing_images(
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\image.py", line 134, in _draw_list_compositing_images
+    a.draw(renderer)
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\artist.py", line 71, in draw_wrapper
+    return draw(artist, renderer)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\text.py", line 762, in draw
+    posx = float(self.convert_xunits(x))
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\artist.py", line 278, in convert_xunits
+    return ax.xaxis.convert_units(x)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\axis.py", line 1813, in convert_units
+    raise munits.ConversionError('Failed to convert value(s) to axis '
+matplotlib.units.ConversionError: Failed to convert value(s) to axis units: '116.41876'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\86157\weather_cmp\MCPserver\china_weather_forecast2025022.py", line 317, in fastreport_in_word
+    pic_path = save_plot(areas, location)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\MCPserver\china_weather_forecast2025022.py", line 214, in save_plot
+    raise ValueError(f"生成图表时出错: {str(e)}")
+ValueError: 生成图表时出错: Failed to convert value(s) to axis units: '116.41876'
+
+2025-06-11 12:17:45,379 - INFO - Processing request of type CallToolRequest
+2025-06-11 12:17:45,379 - INFO - 开始生成 北京 的天气快报
+2025-06-11 12:17:51,082 - ERROR - 保存降水分布图失败: Failed to convert value(s) to axis units: '116.41876'
+2025-06-11 12:17:51,099 - ERROR - 生成天气快报失败: 生成图表时出错: Failed to convert value(s) to axis units: '116.41876'
+2025-06-11 12:17:51,119 - ERROR - Traceback (most recent call last):
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\axis.py", line 1811, in convert_units
+    ret = self._converter.convert(x, self.units, self)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\category.py", line 49, in convert
+    raise ValueError(
+ValueError: Missing category information for StrCategoryConverter; this might be caused by unintendedly mixing categorical and numeric data
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\86157\weather_cmp\MCPserver\china_weather_forecast2025022.py", line 199, in save_plot
+    fontsize=14, color='black',
+    ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\adjustText\__init__.py", line 596, in adjust_text
+    force_draw(ax)
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\adjustText\__init__.py", line 419, in force_draw
+    ax.figure.draw_without_rendering()
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\figure.py", line 3273, in draw_without_rendering
+    self.draw(renderer)
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\artist.py", line 94, in draw_wrapper
+    result = draw(artist, renderer, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\artist.py", line 71, in draw_wrapper
+    return draw(artist, renderer)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\figure.py", line 3257, in draw
+    mimage._draw_list_compositing_images(
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\image.py", line 134, in _draw_list_compositing_images
+    a.draw(renderer)
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\artist.py", line 71, in draw_wrapper
+    return draw(artist, renderer)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\axes\_base.py", line 3216, in draw
+    mimage._draw_list_compositing_images(
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\image.py", line 134, in _draw_list_compositing_images
+    a.draw(renderer)
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\artist.py", line 71, in draw_wrapper
+    return draw(artist, renderer)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\text.py", line 762, in draw
+    posx = float(self.convert_xunits(x))
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\artist.py", line 278, in convert_xunits
+    return ax.xaxis.convert_units(x)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\axis.py", line 1813, in convert_units
+    raise munits.ConversionError('Failed to convert value(s) to axis '
+matplotlib.units.ConversionError: Failed to convert value(s) to axis units: '116.41876'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\86157\weather_cmp\MCPserver\china_weather_forecast2025022.py", line 317, in fastreport_in_word
+  File "C:\Users\86157\weather_cmp\MCPserver\china_weather_forecast2025022.py", line 214, in save_plot
+    return pic_path
+ValueError: 生成图表时出错: Failed to convert value(s) to axis units: '116.41876'
+
+2025-06-11 12:18:41,570 - INFO - Processing request of type CallToolRequest
+2025-06-11 12:18:41,570 - INFO - 开始生成 北京 的天气快报
+2025-06-11 12:18:47,009 - ERROR - 保存降水分布图失败: Failed to convert value(s) to axis units: '116.41876'
+2025-06-11 12:18:47,024 - ERROR - 生成天气快报失败: 生成图表时出错: Failed to convert value(s) to axis units: '116.41876'
+2025-06-11 12:18:47,060 - ERROR - Traceback (most recent call last):
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\axis.py", line 1811, in convert_units
+    ret = self._converter.convert(x, self.units, self)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\category.py", line 49, in convert
+    raise ValueError(
+ValueError: Missing category information for StrCategoryConverter; this might be caused by unintendedly mixing categorical and numeric data
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\86157\weather_cmp\MCPserver\china_weather_forecast2025022.py", line 199, in save_plot
+    cmap='Blues',
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\adjustText\__init__.py", line 596, in adjust_text
+    force_draw(ax)
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\adjustText\__init__.py", line 419, in force_draw
+    ax.figure.draw_without_rendering()
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\figure.py", line 3273, in draw_without_rendering
+    self.draw(renderer)
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\artist.py", line 94, in draw_wrapper
+    result = draw(artist, renderer, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\artist.py", line 71, in draw_wrapper
+    return draw(artist, renderer)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\figure.py", line 3257, in draw
+    mimage._draw_list_compositing_images(
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\image.py", line 134, in _draw_list_compositing_images
+    a.draw(renderer)
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\artist.py", line 71, in draw_wrapper
+    return draw(artist, renderer)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\axes\_base.py", line 3216, in draw
+    mimage._draw_list_compositing_images(
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\image.py", line 134, in _draw_list_compositing_images
+    a.draw(renderer)
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\artist.py", line 71, in draw_wrapper
+    return draw(artist, renderer)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\text.py", line 762, in draw
+    posx = float(self.convert_xunits(x))
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\artist.py", line 278, in convert_xunits
+    return ax.xaxis.convert_units(x)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\axis.py", line 1813, in convert_units
+    raise munits.ConversionError('Failed to convert value(s) to axis '
+matplotlib.units.ConversionError: Failed to convert value(s) to axis units: '116.41876'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\86157\weather_cmp\MCPserver\china_weather_forecast2025022.py", line 317, in fastreport_in_word
+    else:
+          
+  File "C:\Users\86157\weather_cmp\MCPserver\china_weather_forecast2025022.py", line 214, in save_plot
+    # 设置颜色条
+ValueError: 生成图表时出错: Failed to convert value(s) to axis units: '116.41876'
+
+2025-06-11 12:19:26,244 - INFO - Processing request of type CallToolRequest
+2025-06-11 12:19:26,244 - INFO - 开始生成 北京 的天气快报
+2025-06-11 12:19:32,306 - ERROR - 保存降水分布图失败: Failed to convert value(s) to axis units: '116.41876'
+2025-06-11 12:19:32,314 - ERROR - 生成天气快报失败: 生成图表时出错: Failed to convert value(s) to axis units: '116.41876'
+2025-06-11 12:19:32,331 - ERROR - Traceback (most recent call last):
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\axis.py", line 1811, in convert_units
+    ret = self._converter.convert(x, self.units, self)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\category.py", line 49, in convert
+    raise ValueError(
+ValueError: Missing category information for StrCategoryConverter; this might be caused by unintendedly mixing categorical and numeric data
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\86157\weather_cmp\MCPserver\china_weather_forecast2025022.py", line 199, in save_plot
+    cmap='Blues',
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\adjustText\__init__.py", line 596, in adjust_text
+    force_draw(ax)
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\adjustText\__init__.py", line 419, in force_draw
+    ax.figure.draw_without_rendering()
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\figure.py", line 3273, in draw_without_rendering
+    self.draw(renderer)
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\artist.py", line 94, in draw_wrapper
+    result = draw(artist, renderer, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\artist.py", line 71, in draw_wrapper
+    return draw(artist, renderer)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\figure.py", line 3257, in draw
+    mimage._draw_list_compositing_images(
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\image.py", line 134, in _draw_list_compositing_images
+    a.draw(renderer)
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\artist.py", line 71, in draw_wrapper
+    return draw(artist, renderer)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\axes\_base.py", line 3216, in draw
+    mimage._draw_list_compositing_images(
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\image.py", line 134, in _draw_list_compositing_images
+    a.draw(renderer)
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\artist.py", line 71, in draw_wrapper
+    return draw(artist, renderer)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\text.py", line 762, in draw
+    posx = float(self.convert_xunits(x))
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\artist.py", line 278, in convert_xunits
+    return ax.xaxis.convert_units(x)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\86157\weather_cmp\.venv\Lib\site-packages\matplotlib\axis.py", line 1813, in convert_units
+    raise munits.ConversionError('Failed to convert value(s) to axis '
+matplotlib.units.ConversionError: Failed to convert value(s) to axis units: '116.41876'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\86157\weather_cmp\MCPserver\china_weather_forecast2025022.py", line 317, in fastreport_in_word
+    else:
+          
+  File "C:\Users\86157\weather_cmp\MCPserver\china_weather_forecast2025022.py", line 214, in save_plot
+    # 设置颜色条
+ValueError: 生成图表时出错: Failed to convert value(s) to axis units: '116.41876'
+
+2025-06-11 12:46:28,351 - INFO - Processing request of type ListToolsRequest
+2025-06-11 12:46:28,351 - INFO - Processing request of type ListResourcesRequest
+2025-06-11 12:46:28,351 - INFO - Processing request of type ListResourceTemplatesRequest
