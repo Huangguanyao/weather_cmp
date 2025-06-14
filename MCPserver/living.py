@@ -18,8 +18,8 @@ from docx.oxml import OxmlElement
 
 
 # 和风天气API常量,此处需要输入你的和风天气API BASE 还有 API KEY
-HEWEATHER_API_BASE = "https://nf7dn8ftud.re.qweatherapi.com"
-params = {'key':'94925fbf151e4d5d9256a586b58b6a7b'}
+HEWEATHER_API_BASE = "https://API host.re.qweatherapi.com"
+params = {'key':'your_api_key'}
 headers = {"Authorization": "Bearer your_token"}
 # 初始化FastMCP服务器
 #mcp = FastMCP("weather_fast_report")
